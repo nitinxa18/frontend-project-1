@@ -1,0 +1,250 @@
+header {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+header a {
+  color: #ffffff !important;
+}
+
+header .btn-sign, header .btn-register {
+  background: #ff6600 !important;
+  color: #ffffff !important;
+}
+
+header .btn-sign:hover, header .btn-register:hover {
+  background: #e55a00 !important;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 40px 40px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 1;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff6600; /* orange */
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  color: #ffffff;
+}
+
+.suggestion-section {
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.filter-controls select, .filter-controls button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ff6600;
+  border-radius: 5px;
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.filter-controls button {
+  background: #ff6600;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.filter-controls button:hover {
+  background: #e55a00;
+}
+
+.weather-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #ff6600;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  text-align: center;
+  color: #ffffff;
+}
+
+.loading-content p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+#weather-display {
+  text-align: center;
+  display: flex;
+  font-size: 1.2rem;
+  margin-right: 30vh;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+#weather-info {
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 300px;
+  margin: 0;
+  border: 1px solid #ff6600;
+}
+
+#weather-info p {
+  margin: 15px 0;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+#weather-info strong {
+  color: #ff6600;
+}
+
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-items: center;
+}
+
+.suggestion-item {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  max-width: 250px;
+  width: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+#refresh-suggestions{
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.suggestion-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.suggestion-item h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.suggestion-item p {
+  margin: 0 10px 10px;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  #weather-info {
+    padding: 20px;
+    max-width: 90%;
+
+  }
+  #weather-info p {
+    font-size: 18px;
+  }
+  .suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-items: center;
+  }
+  .suggestion-item {
+    max-width: 100%;
+  }
+  .container{
+    align-items: center;
+    padding: 20px 10px 40px 10px;
+  }
+  #refresh-suggestions{
+    width: 200px;
+    font-size: 12px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+  }
+  .filter-controls{
+    height: 30px;
+    margin-top: 10px;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+  }
+}
